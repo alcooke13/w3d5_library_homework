@@ -2,12 +2,25 @@
 
 {% block content %}
 <h1>List of Books</h1>
-    <div>
-        {% for book in books %}
-        <h2><a href="/books/{{books.index(book)}}">Book Title:</a> {{book.title}}</h2>
-        <h3>Author: {{book.author}}</h3>
-        <h4>Genre: {{book.genre}}</h4>
-    </div>
-    {% endfor %}
+<div>
+    {% for book in books %}
+    <h2><a href="/books/{{books.index(book)}}">Book Title:</a> {{book.title}}</h2>
+    <h3>Author: {{book.author}}</h3>
+    <h4>Genre: {{book.genre}}</h4>
+</div>
+{% endfor %}
 
+<br>
+<section>
+    <form action="/books" method="post" id="book_form">
+        <label for="title">Book Title: </label>
+        <input type="text" name="Book Title" id="name"><br>
+        <label for="author">Author: </label>
+        <input type="text" name="author" id="author"><br>
+        <label for="genre">Book Genre: </label>
+        <input type="text" name="genre" id="genre">
+        <input type="submit" value="Submit">
+
+    </form>
+</section>
 {% endblock %}

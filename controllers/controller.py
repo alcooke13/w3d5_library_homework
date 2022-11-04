@@ -11,3 +11,7 @@ def index():
 def choose_book(index):
     one_book = list_of_books[int(index)]
     return render_template('single_book.html', title="Chosen Book", book=one_book)
+
+@app.route('/books', methods=['POST'])
+def adding_to_main_list():
+    pass
