@@ -7,12 +7,18 @@
     <title>Library</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}"
 </head>
-<body>
+<header>
+    <h1>Library</h1>
     <nav>
         <a href="/books">Home</a>
     </nav>
+</header>
+<body>
     <hr>
     {% block content %}
     {% endblock %}
 </body>
+<footer>
+    <h3>Library</h3>
+</footer>
 </html>

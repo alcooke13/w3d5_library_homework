@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>List of Books</h1>
+<h2>List of Books</h2>
 <div class="books_list">
     {% for book in books %}
     <div class="books-list-items">
-        <h2><a href="/books/{{books.index(book)}}">Book Title:</a> {{book.title}}</h2>
+        <h2><a href="/books/{{books.index(book)}}" id="hyperlink-book">{{book.title}}</a></h2>
         <h3>Author: {{book.author}}</h3>
         <h4>Genre: {{book.genre}}</h4>
     </div>
