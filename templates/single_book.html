@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Chosen Book</h2>
+<h2>Selected Book</h2>
 <br>
-<section>
-    Title: {{ book.title }}<br>
-    Author: {{ book.author }}<br>
-    Genre: {{ book.genre }}<br>
+<section id="single-book">
+    <h2>{{ book.title }}</h2><br>
+    <div>Author: {{ book.author }}<br>
+        Genre: {{ book.genre }}<br>
+        <form class="form" action="/books/delete/{{ book.title }}" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
 </section>
-<div>
-    <form class="form" action="/books/delete/{{ book.title }}" method="POST">
-        <input type="submit" value="Delete">
-    </form>
-</div>
+
 {% endblock %}
