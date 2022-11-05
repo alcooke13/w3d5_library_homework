@@ -1,7 +1,7 @@
 from app import app
 from models.book import *
 from models.books import *
-from flask import render_template
+from flask import render_template, request, redirect
 
 @app.route('/books')
 def index():
@@ -14,4 +14,14 @@ def choose_book(index):
 
 @app.route('/books', methods=['POST'])
 def adding_to_main_list():
-    pass
+    title = request.form['title']
+    author = request.form['author']
+    genre = request.form['genre']
+    newbook_to_add = Book(title=title, author=author, genre=genre)
+    add_book(newbook_to_add)
+    return redirect('/books')
+
+@app.route('/books/delete/<title>', methods=['POST'])
+def delete_book(title):
+    remove_book(title)
+    return redirect('/books')
