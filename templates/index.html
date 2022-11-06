@@ -8,18 +8,22 @@
         <h2><a href="/books/{{books.index(book)}}" id="hyperlink-book">{{book.title}}</a></h2>
         <h3>Author: {{book.author}}</h3>
         <h4>Genre: {{book.genre}}</h4>
+        <h4>Available: {{book.available}}</h4>
     </div>
 {% endfor %}
 </div>
 <br>
 <section class="container-submit">
     <form action="/books" method="post" id="book_form">
+        <h4>New Book</h4>
         <label for="title">Book Title: </label>
         <input type="text" name="title" id="title"><br>
         <label for="author">Author: </label>
         <input type="text" name="author" id="author"><br>
         <label for="genre">Book Genre: </label>
         <input type="text" name="genre" id="genre">
+        <label for="checkbox">Available</label>
+        <input type="checkbox" name="checkbox" id="checkbox" value="status">
         <input type="submit" value="Submit" id="submit-button">
 
     </form>

@@ -17,7 +17,8 @@ def adding_to_main_list():
     title = request.form['title']
     author = request.form['author']
     genre = request.form['genre']
-    newbook_to_add = Book(title=title, author=author, genre=genre)
+    available = True if 'checkbox' in request.form else False
+    newbook_to_add = Book(title=title, author=author, genre=genre, available=available)
     add_book(newbook_to_add)
     return redirect('/books')
 
